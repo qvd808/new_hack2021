@@ -4,10 +4,10 @@
 //This variable will be the parameter to google.visualization.arrayToDataTable();
 var temp = [
             ["Element", "Density", { role: "style" }],
-            // ["Copper", 8.94, "#b87333"],
-            // ["Silver", 10.49, "silver"],
-            // ["Gold", 19.30, "gold"],
-            // ["Platinum", 21.45, "color: #e5e4e2"]
+            ["Copper", 8.94, "#b87333"],
+            ["Silver", 10.49, "silver"],
+            ["Gold", 19.30, "gold"],
+            ["Platinum", 21.45, "color: #e5e4e2"]
         ]
 
 //Push method to update the graph
