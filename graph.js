@@ -11,7 +11,7 @@ var temp = [
         ]
 
 //Push method to update the graph
-temp.push(["Copper", 8.94, "#b87333"])
+temp.push(["Copper", 8.94, "#ff0000"])
 
 //This is using google chart to display the graph
 google.charts.load("current", { packages: ['corechart'] });
