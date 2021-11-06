@@ -3,6 +3,9 @@
     "version": "1.0.0",
     "manifest_version": 3,
     "description": "This extension help you keep tract of your time and increase your productivity",
+    "action":{
+        "default_popup": "popup.html"
+    },    
     "background":{
         "service_worker": "background.js"
     },
