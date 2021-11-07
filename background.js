@@ -141,7 +141,7 @@ chrome.runtime.onInstalled.addListener(()=> {
    }
 
    
-//   setInterval(checkTab(),2000);
+  setInterval(checkTab, 900);
 
 });
 
