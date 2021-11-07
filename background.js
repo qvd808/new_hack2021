@@ -89,12 +89,17 @@ chrome.runtime.onInstalled.addListener(()=> {
 */
 
 chrome.runtime.onInstalled.addListener(()=> {
+   var data = {};
+
    
    function checkTab() {
+     
       chrome.tabs.query({'active': true, 'windowId': chrome.windows.WINDOW_ID_CURRENT},
       function(tabs){
-         // console.logs correctly
-         // console.log(tabs[0].url);
+
+                  
+         //console.logs correctly
+         console.log(tabs[0].url);
 
          // remove the slashes from the URL and only keep the main part
          
@@ -102,6 +107,14 @@ chrome.runtime.onInstalled.addListener(()=> {
          let currentTabShortURL = shortenedURL(currentTabLongURL);
          console.log(currentTabShortURL);
 
+         if (!(currentTabShortURL in data)) {
+            data[currentTabShortURL] = 0;
+        }
+        
+         data[currentTabShortURL]++;
+         console.log(data[currentTabShortURL]);
+         //console.log(currentTabShortURL);
+  
       });
 
   }
@@ -109,10 +122,6 @@ chrome.runtime.onInstalled.addListener(()=> {
 
    // function to shorten the URL 
    function shortenedURL(longUrl){
-
-      // if(longUrl == "chrome://extensions/"){
-      //    return "fail";
-      // }
 
       let numberOfSlashes = 0;
       var shortURL = "";
@@ -125,12 +134,12 @@ chrome.runtime.onInstalled.addListener(()=> {
             numberOfSlashes++;
          }
          if(numberOfSlashes == 3){
-            console.log(shortURL);
             return shortURL;
          }
 
       }
    }
+
    
 //   setInterval(checkTab(),2000);
 
